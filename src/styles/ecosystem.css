@@ -1,0 +1,19 @@
+.ecosystem {
+  @apply bg-contain py-2;
+}
+
+.ecosystem-title, .ecosystem-subtitle {
+  @apply text-fus-brand-dark;
+}
+
+.ecosystem-title {
+  @apply mb-3 text-center text-2xl font-bold md:text-4xl ;
+}
+
+.ecosystem-subtitle {
+  @apply text-center text-sm font-normal md:text-base;
+}
+
+.ecosystem-products {
+  @apply grid grid-cols-1 gap-5 md:gap-7 md:grid-cols-2 lg:grid-cols-4;
+}

@@ -1,0 +1,27 @@
+.header {
+  @apply fixed left-0 top-0 z-50 h-24 w-full bg-main-white;
+}
+
+.header-logo {
+  @apply h-[40px] w-[135px] cursor-pointer;
+}
+
+/* NavItems */
+.nav-items {
+  @apply md:flex-between flex w-full flex-col items-center gap-5 md:flex-row;
+}
+
+.nav-item {
+  @apply flex-center cursor-pointer whitespace-nowrap text-lg font-bold text-fus-brand-dark 
+    transition-all duration-150 ease-in-out 
+    hover:text-fus-brand md:text-base;
+}
+
+.mobile-nav-items {
+  @apply fixed left-0 top-24 w-full bg-main-white py-5;
+  height: calc(100vh - 6rem);
+}
+
+.header-menu-icon {
+  @apply z-10 h-6 w-6 cursor-pointer transition duration-150;
+}

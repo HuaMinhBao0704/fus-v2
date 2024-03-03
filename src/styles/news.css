@@ -1,0 +1,23 @@
+.news-item-title {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+  @apply mb-2 text-lg font-bold text-fus-brand-dark md:text-xl;
+}
+
+.news-item-short {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+
+  @apply mb-2 text-base font-medium text-fus-brand-dark md:text-lg;
+}
+
+.news-item-info span {
+  @apply font-medium;
+}

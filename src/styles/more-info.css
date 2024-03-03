@@ -1,0 +1,16 @@
+.more-info {
+  @apply bg-fus-brand-dark bg-contain 
+    py-2 text-main-white;
+}
+
+.more-info-img {
+  @apply h-full max-h-[580px] w-full max-w-[500px];
+}
+
+.more-info-content h2 {
+  @apply font-bold text-base;
+}
+
+.more-info-content p {
+  @apply text-sm font-normal;
+}

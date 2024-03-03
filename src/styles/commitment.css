@@ -1,0 +1,4 @@
+.commitment {
+  background-image: url('/images/thumbnail-1.png');
+  @apply bg-cover bg-center bg-no-repeat;
+}

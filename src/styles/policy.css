@@ -1,0 +1,23 @@
+.rule-content {
+  @apply text-sm md:text-base mb-4;
+}
+
+.rule-content * {
+  @apply mb-1;
+}
+
+.rule-content h2 {
+  @apply font-bold;
+}
+
+.rule-content ul {
+  @apply list-disc;
+}
+
+.rule-content ul li {
+  @apply ml-5;
+}
+
+.rule-content a {
+  @apply text-fus-brand-dark hover:underline font-semibold;
+}
