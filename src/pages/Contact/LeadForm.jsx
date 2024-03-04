@@ -129,7 +129,7 @@ const LeadForm = () => {
       {/* Details */}
       <textarea
         placeholder='Chi tiết nội dung cần tư vấn...'
-        className={`textarea textarea-bordered textarea-sm my-2 w-full ${errors.content && 'border-red-500'}`}
+        className={`textarea textarea-bordered textarea-sm my-2 min-h-36 md:min-h-48 w-full ${errors.content && 'border-red-500'}`}
         {...register('content', { required: true })}
       ></textarea>
       {errors.content && <ErrMsg msg='Nội dung không được để trống' />}

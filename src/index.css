@@ -7,6 +7,7 @@
 @import url('./styles/commitment.css');
 @import url('./styles/policy.css');
 @import url('./styles/news.css');
+@import url('./styles/single-news.css');
 
 @tailwind base;
 @tailwind components;

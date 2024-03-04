@@ -11,11 +11,11 @@
 .news-item-short {
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
   -webkit-box-orient: vertical;
 
-  @apply mb-2 text-base font-medium text-fus-brand-dark md:text-lg;
+  @apply mb-2 text-base font-medium text-gray-600 md:text-lg;
 }
 
 .news-item-info span {

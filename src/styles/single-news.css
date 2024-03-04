@@ -1,0 +1,32 @@
+.single-news {
+  @apply flex items-center justify-center;
+}
+
+.single-news-content {
+  @apply my-3 flex flex-col items-center justify-center;
+}
+
+.single-news-content * {
+  @apply mb-4;
+}
+
+.single-news-content h1,
+.single-news-content h2,
+.single-news-content h3,
+.single-news-content h4,
+.single-news-content h5,
+.single-news-content h6 {
+  @apply font-medium;
+}
+
+.single-news-content a {
+  @apply text-blue-500 hover:underline;
+}
+
+.single-news-content img {
+  @apply max-h-[650px] w-full md:w-[70%];
+}
+
+.single-news-content li {
+  @apply ml-5;
+}

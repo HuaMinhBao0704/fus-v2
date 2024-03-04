@@ -3,7 +3,7 @@
 import { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
-const StarRating = ({ rating }) => {
+export const StarRating = ({ rating }) => {
   // Round the rating to the nearest whole number
   const roundedRating = Math.round(rating);
 
@@ -36,26 +36,34 @@ const NewsItem = ({
   }
 
   return (
-    <Link className='w-full max-w-5xl p-5 lg:mx-auto' to={`/tin-tuc/${id}`}>
-      <div className='mb-3 flex flex-col gap-2 border md:flex-row hover:shadow-md'>
+    <Link
+      className='max-h-[50vh] min-w-full max-w-5xl p-5'
+      to={`/tin-tuc/${id}`}
+    >
+      <div className='mb-3 flex w-full flex-col gap-2 border hover:shadow-md md:flex-row'>
         {/* image */}
-        <img src={coverImg} alt='' className='max-w-md' />
+        <img src={coverImg} alt='' className='min-h-48 max-h-96 max-w-full md:max-w-[50%]' />
         {/* text */}
-        <div className='p-2'>
-          <h2 className='news-item-title'>{title}</h2>
-          <p className='news-item-short'>{short}</p>
-          <p className='news-item-info'>
-            NGÀY ĐĂNG: <span>{getDate(createDate)}</span>
-          </p>
-          <p className='news-item-info'>
-            LƯỢT XEM: <span>{view}</span>
-          </p>
-          <p className='news-item-info'>
-            BÌNH LUẬN: <span>{comment}</span>
-          </p>
-          <p className='news-item-info'>
-            ĐÁNH GIÁ: <StarRating rating={rating} />
-          </p>
+        <div className='md:w-full p-2 flex flex-col'>
+          <div className='flex-1'>
+            <p className='news-item-info my-2 text-gray-500'>
+              {getDate(createDate)}
+            </p>
+            <h2 className='news-item-title'>{title}</h2>
+            <p className='news-item-info mb-2'>
+              ĐÁNH GIÁ: <StarRating rating={rating} />
+            </p>
+            <p className='news-item-short'>{short}</p>
+          </div>
+          <div className='divider'></div>
+          <div className='flex items-center gap-4 w-full'>
+            <p className='news-item-info'>
+              LƯỢT XEM: <span>{view}</span>
+            </p>
+            <p className='news-item-info'>
+              BÌNH LUẬN: <span>{comment}</span>
+            </p>
+          </div>
         </div>
       </div>
     </Link>

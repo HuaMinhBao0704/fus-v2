@@ -1,5 +1,5 @@
 .header {
-  @apply fixed left-0 top-0 z-50 h-24 w-full bg-main-white;
+  @apply fixed left-0 top-0 z-[1] h-24 w-full bg-main-white;
 }
 
 .header-logo {

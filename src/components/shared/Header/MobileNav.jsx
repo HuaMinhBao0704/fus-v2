@@ -3,24 +3,26 @@ import { MdMenu, MdClose } from 'react-icons/md';
 
 import NavItems from './NavItems';
 import CustomTransition from '../CustomTransition';
+import { useMobileMenuContext } from '../../../hooks/useMobileMenuContext';
 
 const MobileNav = () => {
-  const [openMenu, setOpenMenu] = useState(false);
+  // const [openMenu, setOpenMenu] = useState(false);
+  const { setOpenMobileMenu, openMobileMenu } = useMobileMenuContext();
 
   return (
     <nav className='md:hidden'>
-      {openMenu ? (
+      {openMobileMenu ? (
         <MdClose
-          onClick={() => setOpenMenu(false)}
+          onClick={() => setOpenMobileMenu(false)}
           className='header-menu-icon'
         />
       ) : (
         <MdMenu
-          onClick={() => setOpenMenu(true)}
+          onClick={() => setOpenMobileMenu(true)}
           className='header-menu-icon'
         />
       )}
-      {openMenu && (
+      {openMobileMenu && (
         <CustomTransition>
           <div className='mobile-nav-items'>
             <NavItems />

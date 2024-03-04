@@ -3,9 +3,11 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 import CustomTransition from '../components/shared/CustomTransition';
+import { StarRating } from './News/NewsItem';
 
 const SingleNews = () => {
-  const [newsItem, setNewsItem] = useState('');
+  const [newsItemHTML, setNewsItemHTML] = useState('');
+  const [newsItem, setNewsItem] = useState(null);
   const { id } = useParams();
 
   useEffect(() => {
@@ -20,9 +22,11 @@ const SingleNews = () => {
           // ! do not use axios in this case, because it call another API endpoint
           const htmlResponse = await fetch(newsItemData.desc); // ! Change API endpoint in the production mode
           const htmlData = await htmlResponse.text();
-          setNewsItem(htmlData);
+          setNewsItemHTML(htmlData);
+          setNewsItem(newsItemData);
         } else {
-          setNewsItem(newsItemData.desc);
+          setNewsItemHTML(newsItemData.desc);
+          setNewsItem(newsItemData);
         }
 
         // console.log(newsItem);
@@ -38,8 +42,24 @@ const SingleNews = () => {
   return (
     <CustomTransition>
       <div className='single-news'>
-        <div className='wrapper'>
-          <div dangerouslySetInnerHTML={{ __html: newsItem }} />
+        <div className='my-6 w-full max-w-5xl border p-10'>
+          <h1 className='mb-2 text-xl font-bold text-fus-brand-dark md:text-3xl'>
+            {newsItem?.title}
+          </h1>
+          <span className='font-medium flex items-center gap-2'>
+            ĐÁNH GIÁ: <StarRating rating={newsItem?.rating} />
+          </span>
+          <div className='divider'></div>
+          <div
+            dangerouslySetInnerHTML={{ __html: newsItemHTML }}
+            className='single-news-content'
+          />
+          <div className='divider'></div>
+          <div className='my-2 flex items-center gap-2 font-medium'>
+            <span>{newsItem?.comment} BÌNH LUẬN</span>
+            <span>-</span>
+            <span>{newsItem?.view} LƯỢT XEM</span>
+          </div>
         </div>
       </div>
     </CustomTransition>
